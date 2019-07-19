@@ -270,12 +270,12 @@ def smallK(source,target):
 
     #Compute Marcus parameters between the hole bridge node (amino acid) and the terminal hole acceptor node (heme) for the forward HT step.
     if type_da=='hole' and (source_node.nodeNum in bridge_list and source_node.Residuetype in ['CYS','MET','TRP','TYR']) and (target_node.nodeNum in acceptor_list and target_node.Residuetype in ['HEM']):
-        Lambda=(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-12.8)/(mean_distance*12.8)/1.889726)
+        Lambda=(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-12.8)/(mean_distance*12.8)/1.889726)
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
-        VAA=2.7/(target_node.AtomQuant*target_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
-        VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VAA)**0.5
+        VBB=2.7/(source_node.AtomQuant*source_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
+        VAA=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VIF=(VBB*VAA)**0.5
 
      #Compute Marcus parameters between the hole bridge node (heme) and a terminal acceptor node (heme) for the forward HT step.  
     if type_da=='hole' and (source_node.nodeNum in bridge_list and source_node.Residuetype in ['HEM']) and (target_node.nodeNum in acceptor_list and target_node.Residuetype in ['HEM']):
@@ -283,8 +283,8 @@ def smallK(source,target):
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
         VBB=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VBB)**0.5
+        VAA=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VIF=(VAA*VBB)**0.5
 
 ##############Donor-Acceptor##############
 
@@ -311,9 +311,9 @@ def smallK(source,target):
         Lambda=(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
-        VBB=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VAA=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
         VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VBB)**0.5
+        VIF=(VDD*VAA)**0.5
 
     #For BSS: Compute Marcus parameters between the hole donor node (Gly) and the terminal hole acceptor node ([4Fe4S]) for the forward HT step.
     if type_da=='hole' and (source_node.nodeNum in donor_list and source_node.Residuetype in ['GLY']) and (target_node.nodeNum in acceptor_list and target_node.Residuetype in ['SF4']):
@@ -353,27 +353,27 @@ def smallK(source,target):
         Lambda=(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
-        VBB=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VBB)**0.5
+        VBB1=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VBB2=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VIF=(VBB1*VBB2)**0.5
 
     #Compute Marcus parameters between a bridge node (heme) and bridge node (amino acid) for the forward HT step.  
     if type_da=='hole' and (source_node.nodeNum in bridge_list and source_node.Residuetype in ['HEM']) and (target_node.nodeNum in bridge_list and target_node.Residuetype in ['CYS','MET','TRP','TYR']):
         Lambda=(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-12.8)/(mean_distance*12.8)/1.889726)
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
-        VBB=2.7/(target_node.AtomQuant*target_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
-        VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VBB)**0.5
+        VBB1=2.7/(target_node.AtomQuant*target_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
+        VBB2=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VIF=(VBB1*VBB2)**0.5
 
     #Compute Marcus parameters between a bridge donor node (heme) and a bridge node (amino acid) for the backward HT step.      
     if type_da=='hole' and (source_node.nodeNum in bridge_list and source_node.Residuetype in ['CYS','MET','TRP','TYR']) and (target_node.nodeNum in bridge_list and target_node.Residuetype in ['HEM']):
         Lambda=(target_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-17.45)/(mean_distance*17.45)/1.889726)+(source_node.Lamb/27.2114+0.5*(1/2.2-1/4)*(mean_distance-12.8)/(mean_distance*12.8)/1.889726)
         Lambda=0.8+alpha_reorg*(Lambda*27.2114-0.8)
         deltaG=target_node.E-source_node.E
-        VBB=2.7/(source_node.AtomQuant*source_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
-        VDD=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
-        VIF=(VDD*VBB)**0.5
+        VBB1=2.7/(source_node.AtomQuant*source_node.AtomQuant)**0.5 * np.exp(-0.72*shortest_distance)
+        VBB2=np.mean(np.array([8.0])*np.exp(-1*np.array([2.6])*((shortest_distance + 2*3.63)-16.5)/2))*0.00012398
+        VIF=(VBB1*VBB2)**0.5
 
 #Nonadiabatic expression for the HT rate
 
