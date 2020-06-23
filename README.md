@@ -13,7 +13,7 @@ python path/to/EHPath_multirun.py {pdb_list} {cutoff_num} {total_paths} {hole or
 
 An example run would be:
 
-python EHPath_multirun.py pdb_list 4 1 hole 1 1rrq3/HT
+$ python EHPath_multirun.py pdb_list 4 1 hole 1 1rrq3/HT
 
 The pdb_list is located in the main_dir and each row contains a protein pathway to be analyzed. For each pdb in the pdb_list, EHPath_multirun.py will call either EHPath_single_electron.py or EHPath_single_hole.py depending on user input to run the original EHPath.
 
