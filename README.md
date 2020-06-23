@@ -25,7 +25,7 @@ $ python get_input_files.py {protein} {pathway (HT or ET)}
 
 An example is:
 
-$ python get_input_files.py 1rrq6D273 ET
+$ python get_input_files.py 1rrq3 ET
 
 To consolidate all the output files, we can use the consolidate_output.py script:
 
@@ -33,6 +33,6 @@ $ python consolidate_output.py {protein} {pathway (HT or ET)}
 
 An example is:
 
-$ python consolidate_output.py 1rrq6D273 HT
+$ python consolidate_output.py 1rrq3 HT
 
 EHPath multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manageenvironments.html#creating-an-environment-from-an-environment-yml-file) for installation details.
