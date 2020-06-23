@@ -15,16 +15,7 @@ An example run would be:
 
 python EHPath_multirun.py pdb_list 4 1 hole 1 1rrq3/HT
 
-The pdb_list is located in the main_dir and each row contains a protein pathway to be analyzed. An example pdb_list looks like this:
-
-1rrq31
-1rrq32
-1rrq33
-1rrq34
-1rrq35
-1rrq36
-
-For each pdb in the pdb_list, EHPath_multirun.py will call either EHPath_single_electron.py or EHPath_single_hole.py depending on user input to run the original EHPath.
+The pdb_list is located in the main_dir and each row contains a protein pathway to be analyzed. For each pdb in the pdb_list, EHPath_multirun.py will call either EHPath_single_electron.py or EHPath_single_hole.py depending on user input to run the original EHPath.
 
 The input files should be located in an input folder within the main_dir. The donor node csv file should be named ‘Donor_Nodes_’ + pdb + ‘.csv’, the bridge nodes file should be labelled ‘Bridging_Nodes_’ + pdb + ‘.csv’ and the acceptor node file ‘Acceptor_Nodes_’ + pdb + ‘.csv’.
 
