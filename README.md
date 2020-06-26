@@ -7,9 +7,11 @@ Citation: Teo, R. D.; Wang, R.; Smithwick, E.; Migliore, A.; Therien, M. J.; Ber
 We also created EHPath 2.0 (or EHPath multirun) package (EHPath_multirun.py), which is an extension of the EHPath program which allows a user to analyze such pathways with a large number of input files.
 
 A run of EHPath 2.0 requires a command like the following:
+
     ```python
     python path/to/EHPath_multirun.py {pdb_list} {cutoff_num} {total_paths} {hole or electron} {alpha_reorg} {path/to/main_dir}
     ```
+
 An example run would be:
 
 $ python EHPath_multirun.py pdb_list 4 1 hole 1 1rrq3/HT
