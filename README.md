@@ -8,9 +8,7 @@ We also created EHPath 2.0 (or EHPath multirun) package (EHPath_multirun.py), wh
 
 A run of EHPath 2.0 requires a command like the following:
 
-    ```python
     python path/to/EHPath_multirun.py {pdb_list} {cutoff_num} {total_paths} {hole or electron} {alpha_reorg} {path/to/main_dir}
-    ```
 
 An example run would be:
 
