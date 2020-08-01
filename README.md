@@ -34,4 +34,4 @@ An example is:
 
     python consolidate_output.py 1rrq3 HT
 
-EHPath multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for installation details.
+EHPath multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for installation details.
