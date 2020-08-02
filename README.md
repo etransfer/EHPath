@@ -16,7 +16,7 @@ An example run would be:
 
 The pdb_list is located in the main_dir and each row contains a protein pathway to be analyzed. For each pdb in the pdb_list, EHPath_multirun.py will call either EHPath_single_electron.py or EHPath_single_hole.py depending on user input to run the original EHPath.
 
-The input files should be located in an input folder within the main_dir. The donor node csv file should be named ‘Donor_Nodes_’ + pdb + ‘.csv’, the bridge nodes file should be labelled ‘Bridging_Nodes_’ + pdb + ‘.csv’ and the acceptor node file ‘Acceptor_Nodes_’ + pdb + ‘.csv’. After a successful EHPath multirun, the output from each pdb will be individually saved in the output folder within the main_dir. 
+The input files should be located in an input folder within the main_dir. The donor node csv file should be named ‘Donor_Nodes_’ + pdb + ‘.csv’, the bridge nodes file should be labelled ‘Bridging_Nodes_’ + pdb + ‘.csv’ and the acceptor node file ‘Acceptor_Nodes_’ + pdb + ‘.csv’. After a successful EHPath Multirun computation, the output from each pdb will be individually saved in the output folder within the main_dir. 
 
 To make it easier for users, a get_input_files.py script can be used to create the pdb_list. In the folder containing the EHPath_multirun.py script, use the bash command:
 
