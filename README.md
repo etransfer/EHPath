@@ -3,8 +3,8 @@ EHPath ('Electron-Hole Pathways') is a python module that maps and ranks electro
 
 Citation: Teo, R. D.; Wang, R.; Smithwick, E.; Migliore, A.; Therien, M. J.; Beratan, D. N. Proc. Natl. Acad. Sci. U.S.A. 2019, 116, 15811-15816. Link: https://doi.org/10.1073/pnas.1906394116
 
-## EHPath multirun
-We also created the EHPath multirun package (EHPath_multirun.py), which is an extension of the EHPath program which allows a user to analyze such pathways with a large number of input files.
+## EHPath Multirun
+We also created the EHPath Multirun package (EHPath_multirun.py), which is an extension of the EHPath program which allows a user to analyze such pathways with a large number of input files.
 
 A run of EHPath_multirun.py requires a command like the following:
 
@@ -34,4 +34,4 @@ An example is:
 
     python consolidate_output.py 1rrq3 HT
 
-EHPath multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for installation details.
+EHPath Multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for installation details.
