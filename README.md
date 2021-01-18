@@ -36,4 +36,4 @@ An example is:
 
 EHPath Multirun is also parallelized to enable speed-up when run on an HPC cluster. A Conda environment file (environment.yml) is also supplied for compatibility. Please see (https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-from-an-environment-yml-file) for installation details.
 
-Citation: Teo, R. D.; Du, X.; Torres Vera, H. L.; Migliore, A.; Beratan, D. N. J. Phys. Chem. B 2021, 125, 1, 17–23. Link: https://doi.org/10.1021/acs.jpcb.0c08598
+Citation: Teo, R. D.; Du, X.; Torres Vera, H. L.; Migliore, A.; Beratan, D. N. J. Phys. Chem. B 2021, 125, 1, 17–23.                                             Link: https://doi.org/10.1021/acs.jpcb.0c08598
