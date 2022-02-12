@@ -62,15 +62,16 @@ def do_single_run( pdb, cutoff_num, total_paths, type_da, alpha_reorg, dir_path,
 			f.writelines(log)
 			f.write("\n")
 
-cpu_count = os.cpu_count() 
-pool = multiprocessing.Pool( cpu_count )
+if __name__ == "__main__": 
+    cpu_count = os.cpu_count() 
+    pool = multiprocessing.Pool( cpu_count )
 
-print("Running on {} processes\n".format(cpu_count))
+    print("Running on {} processes\n".format(cpu_count))
 
-for k,pdb in enumerate(pdbs):
-	pool.apply_async( do_single_run, args=( pdb, cutoff_num, total_paths, type_da, alpha_reorg, dir_path, k+1 ) )
-pool.close()
-pool.join()
+    for k,pdb in enumerate(pdbs):
+        pool.apply_async( do_single_run, args=( pdb, cutoff_num, total_paths, type_da, alpha_reorg, dir_path, k+1 ) )
+    pool.close()
+    pool.join()
 
 print(' ')
 print('*****************************************')
