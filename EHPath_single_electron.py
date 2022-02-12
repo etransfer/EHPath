@@ -30,7 +30,7 @@ def calculate_paths(pdb, num, cutoff_num, total_paths, type_da, alpha_reorg, dir
             ##############Section for truncating redox groups##############
             ###Charge Acceptors###
 
-            # XD: Could you explain the logic here, it seems like we are iteratively filtering the acceptors. RDT: Sure! depending on the acceptor names, we have to exclude certain atoms that do not contain significant charge density. For example, we exclude the peptide backbone for the amino acids, and the sugar phosphate backbond for nucleic acids.
+            # exclude certain atoms that do not contain significant charge density. For example, we exclude the peptide backbone for the amino acids, and the sugar phosphate backbond for nucleic acids.
 
             #Truncated Tyr, Met, and Trp are represented as phenol, thioether, and indole respectively.
             acceptors = acceptors[~(acceptors['atomtype'].isin(['N','H','CA','HA','C','O','CB','HB2','HB3','HG2','HG3','HE1','HE2','HE3','HD1','HE1','HH','HE2','HD2','HZ2','HH2','HZ3','HE3']) & (acceptors['residuetype'].isin(['TYR','MET','TRP'])) )]
